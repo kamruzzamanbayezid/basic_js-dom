@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Event Bubble</title>
+</head>
+
+<body id="body">
+      <h1>Event Bubbles</h1>
+      <section id="list_container">
+            <ul id="ul_list">
+                  <li id="item-1">Lorem, ipsum.</li>
+                  <li id="item-2">Atque, fugit?</li>
+                  <li id="item-3">Explicabo, odio!</li>
+                  <li id="item-4">Soluta, consectetur.</li>
+                  <li id="item-5">Necessitatibus, odit.</li>
+                  <li id="item-6">Soluta, eligendi!</li>
+            </ul>
+      </section>
+      <script>
+            document.getElementById('item-2').addEventListener('click', (event) => {
+                  console.log("Item-2 is clicked!!");
+                  event.stopImmediatePropagation();
+            });
+            document.getElementById('item-2').addEventListener('click', (event) => {
+                  console.log("Item-2 is clicked!!");
+                  event.stopPropagation();
+            });
+            document.getElementById('item-2').addEventListener('click', (event) => {
+                  console.log("Item-2 is clicked!!");
+                  event.stopPropagation();
+            });
+            document.getElementById('item-2').addEventListener('click', (event) => {
+                  console.log("Item-2 is clicked!!");
+                  event.stopPropagation();
+            });
+
+            document.getElementById('ul_list').addEventListener('click', (event) => {
+                  console.log("ul list is clicked!!");
+                  // event.stopPropagation()
+            });
+
+            document.getElementById('list_container').addEventListener('click', (event) => {
+                  console.log("list_container is clicked!!");
+            });
+            
+            document.getElementById('body').addEventListener('click', (event) => {
+                  console.log("body is clicked!!");
+            });
+      </script>
+</body>
+
+</html>

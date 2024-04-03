@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document Object Model</title>
+</head>
+
+<body id="body">
+      <h1 id="title-bg">Introduction to DOM</h1>
+      <p id="demo"></p>
+
+      <section id="container-1" class="container-1">
+            <h1 id="title1" class="abc">Welcome to Dom</h1>
+            <ul id="ul">
+                  <li id="list-1" class="list">dome</li>
+                  <li class="list">pome</li>
+                  <li class="list">tome</li>
+                  <li class="list">bome</li>
+            </ul>
+            <p id="para" style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+                  suscipit itaque delectus
+                  ipsum
+                  beatae corrupti ab est, sunt placeat reprehenderit, illo eveniet recusandae vel porro dolore
+                  velit quibusdam enim. Voluptate?</p>
+      </section>
+
+      <img id="myImage" src="https://i.ibb.co/Fn6mVw3/user.png" alt="Old Image">
+
+      <p id="demo-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos adipisci molestiae nisi odit
+            nostrum, itaque error fugit, assumenda animi suscipit repudiandae est officia eum quaerat? Sequi enim quos
+            eum ipsa.</p>
+
+
+      <script>
+            const p = document.getElementById('demo');
+            p.innerHTML = 'Hello beautiful people'
+            // console.log(p.firstChild.nodeValue);
+
+            // const h1 = document.body.childNodes[1];
+            // h1.innerHTML = 'Tour of DOM';
+            // console.log(h1.innerHTML);
+
+            const h1 = document.body.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.childNodes[1];
+            h1.style.color = 'red';
+            h1.style.backgroundColor = 'green';
+            // console.log(h1);
+
+            const section_1 = document.getElementsByClassName('container-1');
+
+            for (let collection of section_1) {
+                  collection.style.backgroundColor = 'gray'
+                  collection.style.padding = '10px'
+                  collection.style.borderRadius = '10px'
+            }
+
+            const ul = section_1[0].childNodes[3]
+            const remove_child = section_1[0].childNodes[3].childNodes[3]
+            ul.removeChild(remove_child);
+
+            let old_li = document.createElement('li')
+            old_li.innerHTML = 'poop';
+            ul.appendChild(old_li)
+
+            const new_li = document.createElement('li');
+            new_li.innerHTML = 'push'
+            ul.replaceChild(new_li, old_li)
+            // console.log(remove_child);
+
+            const d = document.getElementById('para')
+            d.style.color = 'white'
+            // console.log(d.style);
+
+            const image = document.getElementById('myImage')
+            // image.src = 'https://i.ibb.co/9HhSZWq/avatar.png'
+            image.setAttribute('style', "border: 2px solid red")
+            image.removeAttribute('style')
+
+            const demo_2 = document.getElementById('demo-2')
+            // const demo_2_value = demo_2.innerHTML 
+            // const demo_2_value = demo_2.childNodes[0] 
+            const demo_2_value = demo_2.firstChild.textContent
+            // console.log(demo_2_value);
+
+      
+            // console.log(document.body);
+
+      </script>
+      <script src="./js/style.js"></script>
+</body>
+
+</html>

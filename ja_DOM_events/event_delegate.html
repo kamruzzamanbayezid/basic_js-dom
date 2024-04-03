@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Event Delegate</title>
+</head>
+
+<body style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+">
+      <h1>Explore event Delegate!</h1>
+      <ul id="ul_list">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Aliquid, tempora dolore.</li>
+            <li class="item">Voluptatem, tempore nihil?</li>
+            <li class="item">Mollitia, enim voluptatibus!</li>
+            <li class="item">Amet, asperiores obcaecati?</li>
+            <li class="item">Id, voluptate architecto?</li>
+      </ul>
+      <button id="add_new_item">Add item</button>
+
+      <script>
+            // const items = document.getElementsByClassName('item');
+            // for (let item of items) {
+            //       item.addEventListener('click', function (e) {
+            //             e.target.parentNode.removeChild(e.target)
+            //       })
+            // }
+
+            // option 2 || recomended
+            document.getElementById('ul_list').addEventListener('click', function (e) {
+                  e.target.parentNode.removeChild(e.target)
+            })
+
+            document.getElementById('add_new_item').addEventListener('click', function () {
+
+                  const li = document.createElement('li');
+                  li.innerText = 'Add new item';
+                  li.classList.add('item');
+                  document.getElementById('ul_list').appendChild(li);
+
+                  // option 1 || bangla option
+                  // const items = document.getElementsByClassName('item');
+                  // for (let item of items) {
+                  //       item.addEventListener('click', function (e) {
+                  //             e.target.parentNode.removeChild(e.target)
+                  //       })
+                  // }
+            })
+      </script>
+</body>
+
+</html>

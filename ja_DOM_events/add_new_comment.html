@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Add new comment</title>
+</head>
+
+<body>
+      <h1>Add new comment</h1>
+      <div id="comment-container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi voluptate voluptatum corrupti, odit magnam
+                  perspiciatis labore recusandae aspernatur. Similique natus doloribus ipsam, voluptates, dolores
+                  assumenda dolorem eius molestias quidem, ex nihil? Deserunt repellat fugit iusto repellendus eos,
+                  soluta architecto doloribus harum cumque, similique officia vitae? Cum ullam non vero in!</p>
+            <p>Veniam mollitia laudantium incidunt eum expedita excepturi animi. Illum debitis voluptas iste deleniti
+                  aperiam dolores esse ipsa commodi, pariatur voluptatum temporibus nihil optio beatae natus, laborum
+                  velit! Sint distinctio aspernatur aliquam facilis saepe illo ipsum earum error natus dolorum, minima
+                  reiciendis perspiciatis voluptatum magni impedit aliquid fugiat libero praesentium pariatur.</p>
+            <p>Aperiam adipisci, sed fuga sint eius doloremque ex quia nulla amet. Ratione rem eaque itaque ipsam dolore
+                  harum impedit ut voluptate iure reiciendis quam quis error fuga facere officia qui ex, sapiente odit.
+                  Ipsam ex sequi error ut aliquam voluptate? Dolorum tenetur reprehenderit voluptatem, quisquam ab
+                  possimus optio ducimus aspernatur.</p>
+      </div>
+      <div>
+            <textarea id="new_comment" cols="60" rows="10"></textarea>
+            <br>
+            <button id="add_comment_btn">Add the comment</button>
+      </div>
+
+      <script>
+            document.getElementById('add_comment_btn').addEventListener('click', function () {
+                  const textarea_value = document.getElementById('new_comment').value
+
+                  const comment_container = document.getElementById('comment-container');
+                  const p = document.createElement('p');
+                  p.innerText = textarea_value;
+                  comment_container.appendChild(p);
+
+                  document.getElementById('new_comment').value = '';
+            });
+
+            // focus || blur || keyup || keydown || keypress
+            // document.getElementById('new_comment').addEventListener('focus', function () {
+            //       console.log('Event triggered inside the input field!');
+            // })
+
+            // document.getElementById('new_comment').addEventListener('blur', function () {
+            //       console.log('Event triggered inside the input field!');
+            // })
+            document.getElementById('new_comment').addEventListener('keyup', function (event) {
+                  console.log(event.target.value);
+            })
+      </script>
+
+</body>
+
+</html>

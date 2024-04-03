@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <div>
+            <li class="list-item">Lorem, ipsum dolor.</li>
+            <li class="list-item">Mollitia, hic quia?</li>
+            <li class="list-item">Porro, ut illum.</li>
+            <li class="list-item">Molestiae, et sapiente.</li>
+      </div>
+
+      <script>
+            // html collection
+
+            // const list_items = document.getElementsByTagName('li');
+            // console.log(list_items);
+            // console.log(list_items.length);
+
+            // list_items[0].parentNode.appendChild(document.createElement('li'));
+            // console.log(list_items);
+            // console.log(list_items.length);
+
+
+            // node list
+
+            let list_items = document.querySelectorAll('li');
+            console.log(list_items);
+            console.log(list_items.length);
+
+            list_items[0].parentNode.appendChild(document.createElement('li'));
+            list_items = document.querySelectorAll('li');
+            console.log(list_items);
+            console.log(list_items.length);
+      </script>
+</body>
+
+</html>
